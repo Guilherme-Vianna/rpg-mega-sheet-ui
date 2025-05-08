@@ -33,7 +33,7 @@ export default function Page() {
   };
 
   const handleView = (sheetId) => {
-    router.push(`/sheets/${sheetId}`);
+    router.push(`/sheet/${sheetId}`);
   };
 
   // Handle form input changes

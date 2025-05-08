@@ -35,13 +35,32 @@ export interface Field {
   updatedAt: string;
 }
 
+export interface Section {
+  id: number;
+  name: string;
+}
+
 export interface CreateFieldDto {
+  color: string,
+  type: string,
+  sectionId: number;
   sheetId: number;
   name: string;
   value?: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
 }
 
 export interface UpdateFieldDto {
+  color: string,
+  type: string,
+  sectionId: number;
   name?: string;
   value?: string;
+  x: number;
+  y: number;
+  w: number;
+  h: number;
 }

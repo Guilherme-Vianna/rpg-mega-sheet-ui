@@ -1,5 +1,5 @@
 import { API_CONFIG } from './config';
-import { CreateUserDto, UpdateUserDto, LoginResponse, User, ApiError, CreateFieldDto, Field } from './types';
+import { CreateUserDto, UpdateUserDto, LoginResponse, User, ApiError, CreateFieldDto, Field, UpdateFieldDto, Section } from './types';
 
 // Adicionando tipos para Sheets
 export interface Sheet {
@@ -267,6 +267,18 @@ class ApiService {
       return this.handleResponse<void>(response);
     } catch (error) {
       throw new Error(error instanceof Error ? error.message : 'Failed to delete field');
+    }
+  }
+
+
+  async getAllSections(sheetId: number): Promise<Section[]> {
+    try {
+      const response = await fetch(`${API_CONFIG.BASE_URL}${API_CONFIG.ENDPOINTS.SECTIONS}?sheetId=${sheetId}`, {
+        headers: this.getHeaders(),
+      });
+      return this.handleResponse<Section[]>(response);
+    } catch (error) {
+      throw new Error(error instanceof Error ? error.message : 'Failed to fetch sheets');
     }
   }
 }

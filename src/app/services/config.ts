@@ -5,6 +5,7 @@ export const API_CONFIG = {
     USERS: '/users',
     RESET_PASSWORD: '/users/reset-password',
     SHEETS: '/sheets',
+    SECTIONS: '/sections',
     FIELDS: '/fields',
   },
 };
